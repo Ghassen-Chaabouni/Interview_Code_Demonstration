@@ -1,0 +1,3 @@
+[console_scripts]
+youtube-driver = youtube_driver.__main__:main
+
