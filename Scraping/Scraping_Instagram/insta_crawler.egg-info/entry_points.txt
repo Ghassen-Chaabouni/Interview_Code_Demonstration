@@ -1,0 +1,3 @@
+[console_scripts]
+insta = insta_crawler.__main__:main
+

@@ -1,0 +1,16 @@
+# to do 
+
+def profile_image(user,**args):
+	""" return profile image as url or bytes """
+
+def last_image(user,**args):
+	""" return last image as url or bytes """
+
+def last_video(user,**args):
+	""" return last video on the profile """
+
+def most_liked_image(user,**args):
+	""" return most liked image within a certain period """
+
+def private_image(user,**args):
+	""" return a boolean : if private images exits or not """

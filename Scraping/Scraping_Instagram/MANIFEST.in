@@ -1,0 +1,4 @@
+
+include insta_crawler/crawler/crawler/*
+include insta_crawler/crawler/crawler/spiders/*.py
+include insta_crawler/crawler/media/*
