@@ -1,0 +1,43 @@
+Metadata-Version: 1.0
+Name: discord-driver
+Version: 1.0.0
+Summary: Scraping Discord conversations
+Home-page: #
+Author: Ghassen Chaabouni
+Author-email: ghassen1302@live.com
+License: MIT
+Description: # Scraping Discord conversations
+        Scraping Discord conversations based on the name of the game, a start date, 
+        an end date and a list of words.
+        
+        1/ Install these libraries:
+        ```
+        $ pip install pyvirtualdisplay
+        $ pip install beautifulsoup4
+        $ pip install selenium
+        $ pip install pandas
+        $ pip install requests
+        ```
+        2/ Download Firefox webdriver from  https://github.com/mozilla/geckodriver/releases
+        
+        3/ If you will use this library in a docker like environment, uncomment these lines in ```Login.py```:
+        ```
+        # chrome_options = webdriver.ChromeOptions()
+        # chrome_options.add_argument('--no-sandbox')
+        # chrome_options.add_argument('--window-size=1366,768')
+        # chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--disable-gpu')
+        # driver = webdriver.Chrome(chrome_options=chrome_options)
+        ```
+        and comment this line in ```Login.py```
+        ```
+        driver = webdriver.Firefox()
+        ```
+        
+        4/ Configure ```email```, ```password```, ```start_date_(dd/mm/yyyy)```, ```end_date_(dd/mm/yyyy)```, ```game_name```
+        in ```config.json``` file.
+        
+        
+        5/ Paste the words that you want to search in ```words_data.txt``` file (One word per line).
+        
+Platform: UNKNOWN
