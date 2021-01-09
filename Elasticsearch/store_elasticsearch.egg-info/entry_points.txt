@@ -1,0 +1,3 @@
+[console_scripts]
+store-elasticsearch = store_elasticsearch.__main__:main
+

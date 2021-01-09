@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: store-elasticsearch
+Version: 1.0.0
+Summary: Store data in Elasticsearch
+Home-page: #
+Author: Ghassen Chaabouni
+Author-email: ghassen1302@live.com
+License: MIT
+Description: # Elasticsearch.
+        Storing and searching data using Elasticsearch.
+        
+Platform: UNKNOWN
