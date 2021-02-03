@@ -89,6 +89,13 @@ class InstaDriver(Driver):
         pass
         
     def save_json(self, data, fname):
+        # Save the data to a json file
+        
+        #Parameters:
+        #    data   (json list): A list of json data
+        #    fname  (str) : File name
+
+    
         # Append JSON object to output file JSON array
         if os.path.isfile(fname):
             # File exists
@@ -126,7 +133,20 @@ class InstaDriver(Driver):
 		
         
     def get_images(self, user='', starttime='', keys=[], download_img=False, json_parser=False, **kwargs):
-        p = Image()
+        # Scrape the images by user or by hashtags
+        
+        # Parameters:
+        #    user           (str) : Instagram username
+        #    starttime      (str) : (yyyy-mm-dd hh:mm:ss) Start scraping time. If not specified, scrape all the images 
+        #    keys           (list): List of hashtags
+        #    download_img   (bool): if True: Download the images
+        #    json_parser    (bool): if ((json_parser==True) and (download_img==False)): Save the data in a json file
+        #                           elif((json_parser==False) and (download_img==False)): return a list of links 
+       
+        # Returns:
+        #    if((json_parser==False) and (download_img==False)): return list({'img_link': 'link1'}, {'img_link': 'link2'},...) 
+        
+	p = Image()
         if(not download_img):
             if (not json_parser):
                 return p.get_images(user=user, starttime=starttime, keys=keys, **kwargs)
@@ -139,6 +159,22 @@ class InstaDriver(Driver):
             
 		
     def get_comment_by_key(self, starttime='', comments='', key=[], json_parser=False, **kwargs):
+	# Scrape the posts by hashtag
+        
+        # Parameters:
+        #    starttime      (str) : (yyyy-mm-dd hh:mm:ss) Start scraping time. If not specified, scrape all the images
+        #    comments       (bool): if True: Scrape the comments
+        #    key            (str) : Hashtag
+        #    json_parser    (bool): if json_parser==True: Save the data in a json file
+        #                           else: return a list of posts 
+       
+        # Returns:
+        #    if json_parser==False: return list({'profil': 'profile1', 'post': 'post1, 'id': 'id1', 'location':'location1', 
+        #                                       'desc_img': 'desc_img1', 'date': 'date1', 'likes': 'likes1',
+        #                                       'comments': list({'commentator': 'commentator1', 'comment': 'comment1', 
+        #                                                          'likes': 'likes1', 'date': 'date1'},...)
+        #    
+	
         p = Post()
         if (not json_parser):
             return p.get_posts(starttime=starttime, comments=comments, keys=[key], **kwargs)
@@ -147,7 +183,23 @@ class InstaDriver(Driver):
             self.save_json(data, "instagram_data.json")          
 			
     def get_comment_by_keys(self, starttime='', comments='', keys=[], json_parser=False, **kwargs):
-        p = Post()
+        # Scrape the posts by hashtags
+        
+        # Parameters:
+        #    starttime      (str) : (yyyy-mm-dd hh:mm:ss) Start scraping time. If not specified, scrape all the images
+        #    comments       (bool): if True: Scrape the comments
+        #    keys           (list): Hashtags
+        #    json_parser    (bool): if json_parser==True: Save the data in a json file
+        #                           else: return a list of posts 
+       
+        # Returns:
+        #    if json_parser==False: return list({'profil': 'profile1', 'post': 'post1, 'id': 'id1', 'location':'location1', 
+        #                                       'desc_img': 'desc_img1', 'date': 'date1', 'likes': 'likes1',
+        #                                       'comments': list({'commentator': 'commentator1', 'comment': 'comment1', 
+        #                                                          'likes': 'likes1', 'date': 'date1'},...)
+        #   
+	
+	p = Post()
 		
         if (not json_parser):
             return p.get_posts(starttime=starttime, comments=comments, keys=keys, **kwargs)
@@ -161,6 +213,22 @@ class InstaDriver(Driver):
         return p.get_info(user,**kwargs)
     
     def get_publications(self, user , starttime, comments, json_parser=False, **kwargs):
+        # Scrape the posts by username
+        
+        # Parameters:
+        #    user           (str) : Instagram username
+        #    starttime      (str) : (yyyy-mm-dd hh:mm:ss) Start scraping time. If not specified, scrape all the images
+        #    comments       (bool): if True: Scrape the comments
+        #    json_parser    (bool): if json_parser==True: Save the data in a json file
+        #                           else: return a list of posts 
+       
+        # Returns:
+        #    if json_parser==False: return list({'profil': 'profile1', 'post': 'post1, 'id': 'id1', 'location':'location1', 
+        #                                       'desc_img': 'desc_img1', 'date': 'date1', 'likes': 'likes1',
+        #                                       'comments': list({'commentator': 'commentator1', 'comment': 'comment1', 
+        #                                                          'likes': 'likes1', 'date': 'date1'},...)
+        #  
+	
         p = Post()
 
         if (not json_parser):
