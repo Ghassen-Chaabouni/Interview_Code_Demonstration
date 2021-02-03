@@ -32,8 +32,8 @@ setup(
     description=('Scraping Instagram profils'),
     long_description=readme,
     long_description_content_type='text/markdown',
-    author='Jawher Bouhouch',
-    author_email='jbouhouch@geeksdata.fr',
+    author='Ghassen Chaabouni',
+    author_email='ghassen1302@live.com',
     packages=[
         'insta_crawler',
     ],
